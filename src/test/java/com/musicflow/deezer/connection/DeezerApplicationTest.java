@@ -15,7 +15,7 @@ public class DeezerApplicationTest {
 		assertEquals("mymusicflow.me", deezerApplication.getDomain());
 		assertEquals("https://mymusicflow.me/deezer/connected", deezerApplication.getRedirectUrl());
 		assertEquals(
-				"https://connect.deezer.com/oauth/auth.php?app_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&perms=basic_access,email",
+				"https://connect.deezer.com/oauth/auth.php?format=window&app_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&perms=PERMISSIONS",
 				deezerApplication.getConnectUrl());
 	}
 

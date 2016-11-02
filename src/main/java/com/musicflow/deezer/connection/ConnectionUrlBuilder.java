@@ -22,9 +22,10 @@ public class ConnectionUrlBuilder {
 		connectionUrl = deezerApplication.getConnectUrl();
 	}
 
-	public ConnectionUrlBuilder withPermissions(final List<Permission> permissions) {
+	public ConnectionUrlBuilder withPermissions(final List<Permission> permissions) throws DeezerConnectionException {
 		connectionUrl = connectionUrl.replace(PERMISSIONS, getPermissionsAsString(permissions));
 		return this;
+
 	}
 
 	public String build() throws DeezerConnectionException {
@@ -43,8 +44,14 @@ public class ConnectionUrlBuilder {
 		}
 	}
 
-	private String getPermissionsAsString(List<Permission> permissions) {
-		return permissions.stream().map(p -> p.name().toLowerCase()).collect(Collectors.joining(","));
+	private String getPermissionsAsString(List<Permission> permissions) throws DeezerConnectionException {
+		try {
+			return URLEncoder.encode(
+					permissions.stream().map(p -> p.name().toLowerCase()).collect(Collectors.joining(",")),
+					StandardCharsets.UTF_8.toString());
+		} catch (UnsupportedEncodingException e) {
+			throw new DeezerConnectionException("An error occurred while encoding permissions", e);
+		}
 	}
 
 }
