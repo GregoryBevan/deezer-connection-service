@@ -17,7 +17,7 @@ public class ConnectionUrlBuilderTest {
 				Permission.LISTENING_HISTORY);
 		final String connectionUrl = new ConnectionUrlBuilder().withPermissions(permissions).build();
 		assertEquals(
-				"https://connect.deezer.com/oauth/auth.php?perms=basic_access%2Cmanage_library%2Clistening_history&format=window&app_id=212422&redirect_uri=https%3A%2F%2Fmymusicflow.me%2Fdeezer%2Fconnected",
+				"https://connect.deezer.com/oauth/auth.php?perms=basic_access%2Cmanage_library%2Clistening_history&format=window&app_id=212422&redirect_uri=https%3A%2F%2Fmymusicflow.me%2Fdeezer%2Fconnected.html",
 				connectionUrl);
 	}
 
