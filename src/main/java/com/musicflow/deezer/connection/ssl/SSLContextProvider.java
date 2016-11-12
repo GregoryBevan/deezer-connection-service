@@ -7,8 +7,6 @@ import java.security.SecureRandom;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509TrustManager;
 
 import org.apache.http.ssl.SSLContexts;
 
@@ -29,6 +27,7 @@ public enum SSLContextProvider {
 	 * @throws DeezerConnectionException
 	 */
 	public SSLContext createSSLContext() throws DeezerConnectionException {
+		System.setProperty("https.protocols", "TLSv1.1");
 		try {
 			SSLContext sslContext = SSLContexts.custom().build();
 			sslContext.init(null,getTrustManagers(), SecureRandom.getInstanceStrong());
