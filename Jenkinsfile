@@ -7,5 +7,5 @@ node {
   
 	// Mark the code build 'stage'....
 	stage 'Build'
-	sh 'gradle build --info'
+	sh 'gradlew build --info'
  }
