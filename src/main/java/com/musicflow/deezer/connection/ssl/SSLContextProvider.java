@@ -28,7 +28,7 @@ public enum SSLContextProvider {
 	 */
 	public SSLContext createSSLContext() throws DeezerConnectionException {
 		try {
-			SSLContext sslContext = SSLContexts.custom().build();
+			SSLContext sslContext = SSLContexts.custom().useProtocol("TLS").build();
 			sslContext.init(null,getTrustManagers(), SecureRandom.getInstanceStrong());
 			return sslContext;
 		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e) {
