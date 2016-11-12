@@ -46,6 +46,7 @@ public class AuthorizationService {
 	 * @throws DeezerConnectionException
 	 */
 	public AuthorizationService() throws DeezerConnectionException {
+		System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
 		connectionUrlBuilder = new ConnectionUrlBuilder();
 		SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(
 				SSLContextProvider.INSTANCE.createSSLContext());
