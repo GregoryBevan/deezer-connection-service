@@ -7,5 +7,5 @@ node {
   
 	// Mark the code build 'stage'....
 	stage 'Build'
-	sh 'chmod +x gradlew | ./gradlew build --info'
+	sh './gradlew build --info'
  }
