@@ -40,10 +40,6 @@ public class AuthorizationService {
 
 	private final CloseableHttpClient httpClient;
 	
-	static {
-		System.setProperty("https.protocols", "TLSv1.2");
-	}
-
 	/**
 	 * Constructors that initializes http client for further requests
 	 * 
