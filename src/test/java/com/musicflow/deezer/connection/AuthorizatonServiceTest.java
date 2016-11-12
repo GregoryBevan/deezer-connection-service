@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.musicflow.deezer.connection.exception.BadCredentialsException;
 import com.musicflow.deezer.connection.exception.DeezerConnectionException;
 
-public class ConnectionServiceTest {
+public class AuthorizatonServiceTest {
 
 	@Test
 	public void test_login_ok() throws DeezerConnectionException, BadCredentialsException {

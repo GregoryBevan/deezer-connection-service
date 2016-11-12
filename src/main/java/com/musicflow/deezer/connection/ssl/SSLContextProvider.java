@@ -27,7 +27,6 @@ public enum SSLContextProvider {
 	 * @throws DeezerConnectionException
 	 */
 	public SSLContext createSSLContext() throws DeezerConnectionException {
-		System.setProperty("https.protocols", "TLSv1.1");
 		try {
 			SSLContext sslContext = SSLContexts.custom().build();
 			sslContext.init(null,getTrustManagers(), SecureRandom.getInstanceStrong());

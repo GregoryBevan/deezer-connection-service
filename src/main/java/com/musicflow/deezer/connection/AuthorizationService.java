@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.CookieStore;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
@@ -40,6 +39,10 @@ public class AuthorizationService {
 	private final ConnectionUrlBuilder connectionUrlBuilder;
 
 	private final CloseableHttpClient httpClient;
+	
+	static {
+		System.setProperty("https.protocols", "TLSv1.2");
+	}
 
 	/**
 	 * Constructors that initializes http client for further requests
