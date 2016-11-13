@@ -29,7 +29,7 @@ public enum SSLContextProvider {
 	public SSLContext createSSLContext() throws DeezerConnectionException {
 		try {
 			SSLContext sslContext = SSLContexts.createDefault();
-			sslContext.init(null,getTrustManagers(), SecureRandom.getInstanceStrong());
+			sslContext.init(null,getTrustManagers(), SecureRandom.getInstance("SHA1PRNG")/*SecureRandom.getInstanceStrong()*/);
 			return sslContext;
 		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e) {
 			throw new DeezerConnectionException("An error occurred while build SSL context", e);
