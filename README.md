@@ -1,3 +1,5 @@
+<a href='http://elgregos.fr:8080/job/deezer-connection-service/job/master/'><img src='http://elgregos.fr:8080/job/deezer-connection-service/job/master/badge/icon'></a>
+
 [![Build Status](http://elgregos.fr:8080/job/deezer-connection-service/job/master/badge/icon)](http://elgregos.fr:8080/job/deezer-connection-service/job/master/)
 
 # deezer-connection-service
