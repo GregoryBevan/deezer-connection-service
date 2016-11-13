@@ -29,7 +29,7 @@ import com.musicflow.deezer.connection.ssl.SSLContextProvider;
 /**
  * Service that handles user authorization for mymuicflow.me
  * 
- * @author Grégory
+ * @author Grï¿½gory
  *
  */
 public class AuthorizationService {
@@ -46,7 +46,6 @@ public class AuthorizationService {
 	 * @throws DeezerConnectionException
 	 */
 	public AuthorizationService() throws DeezerConnectionException {
-		System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
 		connectionUrlBuilder = new ConnectionUrlBuilder();
 		SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(
 				SSLContextProvider.INSTANCE.createSSLContext());
@@ -118,7 +117,7 @@ public class AuthorizationService {
 			return finalUrl.toString().replace(DeezerApplication.getInstance().getRedirectUrl(), "").split("=")[1];
 		} else {
 			throw new DeezerConnectionException(
-					"Unable to get authorization code after authorization request executioné");
+					"Unable to get authorization code after authorization request executionï¿½");
 		}
 	}
 

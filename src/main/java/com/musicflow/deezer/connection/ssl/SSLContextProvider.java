@@ -15,7 +15,7 @@ import com.musicflow.deezer.connection.exception.DeezerConnectionException;
 /**
  * Provider of mymusicflow.me SSL context (Singleton)
  * 
- * @author Grégory
+ * @author Grï¿½gory
  */
 public enum SSLContextProvider {
 	INSTANCE;
@@ -29,7 +29,7 @@ public enum SSLContextProvider {
 	public SSLContext createSSLContext() throws DeezerConnectionException {
 		try {
 			SSLContext sslContext = SSLContexts.createDefault();
-			sslContext.init(null,getTrustManagers(), new SecureRandom());
+			sslContext.init(null,getTrustManagers(), SecureRandom.getInstanceStrong());
 			return sslContext;
 		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e) {
 			throw new DeezerConnectionException("An error occurred while build SSL context", e);
