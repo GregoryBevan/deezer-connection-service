@@ -1,12 +1,11 @@
 node {
-	// Mark the code checkout 'stage'....
 	stage 'Checkout'
- 
-	// Checkout code from repository
 	checkout scm
   
-	// Mark the code build 'stage'....
-	stage 'Build'
-	sh 'chmod +x gradlew'
-	sh './gradlew build --info'
+	stage 'Compile'
+	sh './gradlew clean build -x test'
+	
+	stage 'Unit test'
+	sh (script: './gradlew test', returnStatus: true)
+    step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/test/TEST-*.xml'])
  }
